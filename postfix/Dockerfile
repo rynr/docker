@@ -8,4 +8,4 @@ EXPOSE 25
 EXPOSE 465
 USER root
 WORKDIR "/var/spool/postfix"
-ENTRYPOINT ["/usr/libexec/postfix/master" "-w"]
+ENTRYPOINT ["/usr/libexec/postfix/postfix-script", "start-fg"]
