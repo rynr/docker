@@ -1,0 +1,11 @@
+FROM arm32v6/alpine:latest
+
+LABEL package="tor", version="0.4.3.5-r0", arch="armhf"
+
+RUN apk add --update \
+  tor=0.4.3.5-r0 \
+  && rm -rf /var/cache/apk/*
+
+EXPOSE 9050
+USER tor
+ENTRYPOINT tor
