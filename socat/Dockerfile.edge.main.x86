@@ -1,9 +1,9 @@
 FROM x86/alpine:latest
 
-LABEL package="socat", version="1.7.3.4-r0", arch="x86"
+LABEL package="socat", version="1.7.4.0-r0", arch="x86"
 
 RUN apk add --update \
-        socat=1.7.3.4-r0 \
+        socat=1.7.4.0-r0 \
     && rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["socat"]
