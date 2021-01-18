@@ -1,0 +1,10 @@
+FROM <%= case arch; when 'armhf' then 'arm32v6'; when 'armv7' then 'arm32v7'; when 'aarch64' then 'arm64v8'; when 'x86_64' then 'amd64'; else arch; end  %>/alpine:latest
+
+LABEL package="<%= pkg %>", version="<%= ver %>", arch="<%= arch %>"
+
+RUN apk add --update \
+        <%= pkg %>=<%= ver %> \
+    && rm -rf /var/cache/apk/*
+
+ENTRYPOINT ["privoxy"]
+CMD []

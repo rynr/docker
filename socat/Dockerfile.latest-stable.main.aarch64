@@ -1,9 +1,9 @@
 FROM arm64v8/alpine:latest
 
-LABEL package="socat", version="1.7.3.4-r0", arch="aarch64"
+LABEL package="socat", version="1.7.4.1-r0", arch="aarch64"
 
 RUN apk add --update \
-        socat=1.7.3.4-r0 \
+        socat=1.7.4.1-r0 \
     && rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["socat"]

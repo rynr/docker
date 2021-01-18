@@ -1,9 +1,9 @@
 FROM ppc64le/alpine:latest
 
-LABEL package="tor", version="0.4.3.7-r0", arch="ppc64le"
+LABEL package="tor", version="0.4.4.6-r1", arch="ppc64le"
 
 RUN apk add --update \
-  tor=0.4.3.7-r0 \
+  tor=0.4.4.6-r1 \
   && rm -rf /var/cache/apk/*
 
 EXPOSE 9050

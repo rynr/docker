@@ -1,0 +1,10 @@
+FROM x86/alpine:latest
+
+LABEL package="privoxy", version="3.0.29-r0", arch="x86"
+
+RUN apk add --update \
+        privoxy=3.0.29-r0 \
+    && rm -rf /var/cache/apk/*
+
+ENTRYPOINT ["privoxy"]
+CMD []

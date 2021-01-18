@@ -1,9 +1,9 @@
 FROM amd64/alpine:latest
 
-LABEL package="tor", version="0.4.4.6-r0", arch="x86_64"
+LABEL package="tor", version="0.4.4.6-r1", arch="x86_64"
 
 RUN apk add --update \
-  tor=0.4.4.6-r0 \
+  tor=0.4.4.6-r1 \
   && rm -rf /var/cache/apk/*
 
 EXPOSE 9050
