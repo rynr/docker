@@ -1,9 +1,9 @@
 FROM arm32v7/alpine:latest
 
-LABEL package="postfix", version="3.5.8-r0", arch="armv7"
+LABEL package="postfix", version="3.5.9-r0", arch="armv7"
 
 RUN apk add --update \
-        postfix=3.5.8-r0 \
+        postfix=3.5.9-r0 \
     && rm -rf /var/cache/apk/*
 
 EXPOSE 25

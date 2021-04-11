@@ -1,10 +1,13 @@
 FROM mips64/alpine:latest
 
-LABEL package="privoxy", version="3.0.29-r0", arch="mips64"
+LABEL package="privoxy", version="3.0.31-r0", arch="mips64"
 
 RUN apk add --update \
-        privoxy=3.0.29-r0 \
+        privoxy=3.0.31-r0 \
     && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["privoxy"]
-CMD []
+ENV CONFFILE=/etc/privoxy/config
+ENV PIDFILE=/var/run/privoxy.pid
+
+ENTRYPOINT ["/usr/sbin/privoxy"]
+CMD ["--no-daemon", "--pidfile", "${PIDFILE}", "${CONFFILE}"]

@@ -1,9 +1,9 @@
 FROM arm32v7/alpine:latest
 
-LABEL package="tor", version="0.4.4.6-r1", arch="armv7"
+LABEL package="tor", version="0.4.5.7-r0", arch="armv7"
 
 RUN apk add --update \
-  tor=0.4.4.6-r1 \
+  tor=0.4.5.7-r0 \
   && rm -rf /var/cache/apk/*
 
 EXPOSE 9050

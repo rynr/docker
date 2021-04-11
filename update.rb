@@ -36,6 +36,7 @@ options[:versions] =  Nokogiri::HTML(Net::HTTP.get_response(REPO_HOST, '/alpine/
 # verify repositories
 options[:repositories] ||= ['main']
 options[:versions].each do |version|
+  sleep 1 # SLEEP
   options[:generate][version] = Nokogiri::HTML(Net::HTTP.get_response(REPO_HOST, "/alpine/#{version}/").body).xpath('//a').map { |a|
     a['href'].tr('/', '')
   }.filter {
@@ -51,6 +52,7 @@ options[:archs] ||= ['x86_64']
 options[:generate].each_key do |version|
   options[:generate][version].each_key do |repo|
     options[:archs].each do |arch|
+      sleep 1 # SLEEP
       options[:generate][version][repo] = Nokogiri::HTML(Net::HTTP.get_response(REPO_HOST, "/alpine/#{version}/#{repo}/").body).xpath('//a').map { |a|
         a['href'].tr('/', '')
       }.filter {
@@ -67,6 +69,7 @@ options[:generate].each_key do |version|
   options[:generate][version].each_key do |repo|
     options[:generate][version][repo].each do |arch|
       puts "Checking #{version} / #{repo} / #{arch}"
+      sleep 1 # SLEEP
       Nokogiri::HTML(Net::HTTP.get_response(REPO_HOST, "/alpine/#{version}/#{repo}/#{arch}/").body).xpath('//a').map { |a|
         if match = /([^\.]+)\-(([0-9]+\.)+[0-9]+-r[0-9]+)\.apk/.match(a['href'])
             pkg, ver = match[1,2]
