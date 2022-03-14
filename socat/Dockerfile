@@ -1,6 +1,6 @@
-FROM arm32v7/alpine:latest
+FROM alpine:latest
 
-LABEL package="socat", version="1.7.4.2-r0", arch="armv7"
+LABEL package="socat", version="1.7.4.2-r0"
 
 RUN apk add --update \
         socat=1.7.4.2-r0 \

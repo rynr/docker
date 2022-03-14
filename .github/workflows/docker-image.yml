@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: ['tor', 'privoxy']
+        image: ['tor', 'privoxy', 'socat']
 
     steps:
       - name: Checkout
