@@ -5,5 +5,6 @@ Minimal alpine images for docker.
 
 Currently available:
 
- - postfix
+ - privoxy
+ - socat
  - tor

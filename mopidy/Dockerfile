@@ -1,10 +1,11 @@
-FROM ppc64le/alpine:latest
+FROM alpine:latest
 
-LABEL package="mopidy", version="3.2.0-r5", arch="ppc64le"
+LABEL package="mopidy", version="3.2.0-r3"
 
 RUN apk add --update \
-        mopidy=3.2.0-r5 \
+        mopidy=3.2.0-r3 \
     && rm -rf /var/cache/apk/*
 
 EXPOSE 6600 6680 5555/udp
 CMD ["/usr/local/bin/mopidy", "--save-debug-log"]
+
