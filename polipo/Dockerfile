@@ -1,6 +1,6 @@
-FROM x86/alpine:latest
+FROM alpine:latest
 
-LABEL package="polipo", version="1.1.1-r0", arch="x86"
+LABEL package="polipo", version="1.1.1-r0"
 
 RUN apk add --update \
         polipo=1.1.1-r0 \
