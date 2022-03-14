@@ -1,6 +1,6 @@
-FROM ppc64le/alpine:latest
+FROM alpine:latest
 
-LABEL package="tor", version="0.4.6.9-r0", arch="ppc64le"
+LABEL package="tor", version="0.4.6.9-r0"
 
 RUN apk add --update \
   tor=0.4.6.9-r0 \
