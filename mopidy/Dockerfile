@@ -6,6 +6,6 @@ RUN apk add --update \
         mopidy=3.2.0-r3 \
     && rm -rf /var/cache/apk/*
 
-EXPOSE 6600 6680 5555/udp
-CMD ["/usr/local/bin/mopidy", "--save-debug-log"]
+EXPOSE 6680 5555/udp
+CMD ["/usr/bin/mopidy", "-o", "http/hostname=0.0.0.0"]
 
