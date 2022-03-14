@@ -1,6 +1,6 @@
-FROM ppc64le/alpine:latest
+FROM x86/alpine:latest
 
-LABEL package="mopidy", version="3.2.0-r5", arch="ppc64le"
+LABEL package="mopidy", version="3.2.0-r5", arch="x86"
 
 RUN apk add --update \
         mopidy=3.2.0-r5 \

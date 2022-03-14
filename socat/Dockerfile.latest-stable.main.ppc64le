@@ -1,9 +1,9 @@
 FROM ppc64le/alpine:latest
 
-LABEL package="socat", version="1.7.4.1-r0", arch="ppc64le"
+LABEL package="socat", version="1.7.4.2-r0", arch="ppc64le"
 
 RUN apk add --update \
-        socat=1.7.4.1-r0 \
+        socat=1.7.4.2-r0 \
     && rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["socat"]

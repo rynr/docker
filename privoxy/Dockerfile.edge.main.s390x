@@ -1,9 +1,9 @@
 FROM s390x/alpine:latest
 
-LABEL package="privoxy", version="3.0.32-r0", arch="s390x"
+LABEL package="privoxy", version="3.0.33-r0", arch="s390x"
 
 RUN apk add --update \
-        privoxy=3.0.32-r0 \
+        privoxy=3.0.33-r0 \
     && rm -rf /var/cache/apk/*
 
 ENV CONFFILE=/etc/privoxy/config

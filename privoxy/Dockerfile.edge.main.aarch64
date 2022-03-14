@@ -1,9 +1,9 @@
 FROM arm64v8/alpine:latest
 
-LABEL package="privoxy", version="3.0.32-r0", arch="aarch64"
+LABEL package="privoxy", version="3.0.33-r0", arch="aarch64"
 
 RUN apk add --update \
-        privoxy=3.0.32-r0 \
+        privoxy=3.0.33-r0 \
     && rm -rf /var/cache/apk/*
 
 ENV CONFFILE=/etc/privoxy/config

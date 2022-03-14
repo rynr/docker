@@ -1,9 +1,9 @@
 FROM arm32v6/alpine:latest
 
-LABEL package="mopidy", version="3.0.2-r3", arch="armhf"
+LABEL package="mopidy", version="3.2.0-r3", arch="armhf"
 
 RUN apk add --update \
-        mopidy=3.0.2-r3 \
+        mopidy=3.2.0-r3 \
     && rm -rf /var/cache/apk/*
 
 EXPOSE 6600 6680 5555/udp

@@ -1,9 +1,9 @@
 FROM s390x/alpine:latest
 
-LABEL package="socat", version="1.7.4.1-r0", arch="s390x"
+LABEL package="socat", version="1.7.4.3-r0", arch="s390x"
 
 RUN apk add --update \
-        socat=1.7.4.1-r0 \
+        socat=1.7.4.3-r0 \
     && rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["socat"]
