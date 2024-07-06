@@ -13,6 +13,7 @@ jobs:
       matrix:
         image:
           - 'socat'
+          - 'arduino'
 
     steps:
       - name: Checkout
